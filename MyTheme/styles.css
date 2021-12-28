@@ -1,0 +1,511 @@
+/**
+*  Publish Foundation theme
+*  Copyright (c) John Sundell 2019
+*  MIT license, see LICENSE file for details
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-family: San Francisco, Arial;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    text-align: left;
+}
+
+header {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 2%, rgba(128,0,0,1) 50%, rgba(255,46,46,1) 100%);
+}
+
+header .wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .site-name {
+    font-size: 1.5em;
+    color: #000;
+    font-weight: bold;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 7px;
+    line-height: 1.5em;
+}
+
+nav li a.selected {
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    margin: 20px 0;
+    font-style:bold;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: inherit;
+}
+
+.description {
+    margin-bottom: 40px;
+}
+
+.item-list > li {
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+
+.item-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.item-list h1 {
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.item-list p {
+    margin-bottom: 0;
+}
+
+.tag-list {
+    margin-bottom: 15px;
+}
+
+.tag-list li,
+.tag {
+    display: inline-block;
+    background-color: #000;
+    color: #ddd;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.tag-list a,
+.tag a {
+    text-decoration: none;
+}
+
+.item-page .tag-list {
+    display: inline-block;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+.browse-all {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.all-tags li {
+    font-size: 1.4em;
+    margin-right: 10px;
+    padding: 6px 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5;
+  margin-bottom: 10px; /* Footer height */
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+    }
+
+    body,
+    header .site-name {
+        color: #ddd;
+    }
+
+    .item-list > li {
+        background-color: #333;
+    }
+
+    header {
+        background-color: #000;
+    }
+}
+
+@media(max-width: 600px) {
+    .wrapper {
+        padding: 40px 20px;
+    }
+}
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .logo-image {
+        width: 40%;
+        margin: 20px;
+        border-radius: 50%;
+    }
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .logo-image {
+        width: 20%;
+        margin: 20px;
+        border-radius: 50%;
+    }
+}
+
+.post-category {
+    margin: 1px;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 60%;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.post-category-engineering {
+    background-color: orange;
+}
+
+.post-category-swift {
+    background-color: orangered;
+}
+
+.post-category-article {
+    background-color: darkred;
+}
+
+.post-category-html {
+    background-color: orange;
+}
+
+.post-category-projects {
+    background-color: darkblue;
+}
+
+.post-category-ios {
+    background-color: blue;
+}
+
+.post-category-redback {
+    background-color: red;
+}
+
+.post-category-css {
+    background-color: blue;
+}
+
+.post-category-ongoing {
+    background-color: green;
+}
+
+.post-category-unity {
+    background-color: black;
+}
+
+.post-category-c++ {
+    background-color: purple;
+}
+
+.post-category-completed {
+    background-color: red;
+}
+
+
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes particleAnimation
+  {
+      from {
+          left: -100px;
+      }
+      to {
+          left: calc( 99% );
+      }
+  }
+  
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  .p{
+    left:0px;
+    top:50px;
+    width:2px;
+    height:2px;
+    background-color:white;
+    position:absolute;
+    animation-name:particleAnimation;
+    animation-timing-function:ease-in;
+    animation-iteration-count: infinite;
+    z-index: -1;
+  }
+
+  .p::before{
+    position:absolute;
+    display:block;
+    content:"";
+    width:100px;
+    right:1px;
+    top:0px;
+    height:1px;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(228, 72, 72, 1) 100%);
+    animation-delay: 1000ms;
+  }
+
+  
+
+  :root {
+    --animation-time: 3s;
+  }
+  
+
+  .p-1{
+    animation-duration: 2.5s;
+    animation-delay: 650ms;
+  }
+  .p-2{
+    animation-duration: 3.5s;
+    animation-delay: 900ms;
+    top:10%;
+  }
+  .p-3{
+    animation-duration: 4s;
+    animation-delay: 500ms;;
+    top:30%;
+  }
+  .p-4{
+    animation-duration: 3s;
+    animation-delay: 300ms;
+    top:50%;
+  }
+  .p-5{
+    animation-duration: 5.5s;
+    animation-delay: 190ms;
+    top:70%;
+  }
+  .p-6{
+    animation-duration: 3s;
+    animation-delay: 450ms;
+    top:80%;
+  }
+
+pre code {
+    font-family: monospace;
+    display: block;
+    padding: 0 20px;
+    color: #a9bcbc;
+    line-height: 1.4em;
+    font-size: 1.2em;
+    overflow-x: auto;
+    white-space: pre;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+pre code .keyword {
+    color: #e73289;
+}
+pre code .type {
+    color: #8281ca;
+}
+pre code .call {
+    color: #348fe5;
+}
+pre code .property {
+    color: #21ab9d;
+}
+pre code .number {
+    color: #db6f57;
+}
+pre code .string {
+    color: #fa641e;
+}
+pre code .comment {
+    color: #6b8a94;
+}
+pre code .dotAccess {
+    color: #92b300;
+}
+pre code .preprocessing {
+    color: #b68a00;
+}
+    
+.dynamic-typing {
+    text-align: auto;
+    display: inline-block;
+}
+
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .dynamic-typing h1 {
+        border-right: .15em solid #E44C65;
+        font-family: "Courier";
+        font-weight: bold;
+        opacity: 0;
+        font-size: 18px;
+        margin: 0 right; /* Gives that scrolling effect as the typing happens */
+        white-space: nowrap;
+        overflow: hidden;
+        color: white;
+    }
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .dynamic-typing h1 {
+        border-right: .15em solid #E44C65;
+        font-family: "Courier";
+        font-weight: bold;
+        opacity: 0;
+        font-size: 25px;
+        margin: 0 right; /* Gives that scrolling effect as the typing happens */
+        white-space: nowrap;
+        overflow: hidden;
+        color: white;
+    }
+}
+    
+    
+  
+
+  .dynamic-typing h1:nth-child(1) {
+    width: 100%;
+    animation: type 1s steps(40, end);
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    align-self: left;
+  }
+  
+  .dynamic-typing h1:nth-child(2) {
+    width: 100%;
+    opacity: 0;
+    animation: type2 1s steps(40, end), blink .5s step-end infinite alternate;;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+
+
+
+
+  @keyframes type {
+    0% {
+        width: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      99.9% {
+        border-right: .15em solid orange;
+      }
+      100% {
+        opacity: 1;
+        border: none;
+      }
+  }
+  
+
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .icon img{
+        width:8%;
+        margin: 10px 5px 5px 5px
+    }
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .icon img{
+        width:2%;
+        margin: 10px 5px 5px 5px
+    }
+}
+
+.padding {
+    margin-top: 10px
+}
+
+
+  .top_button {
+  position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    right:30px
+    padding: 5px;
+    background-color: red;
+    padding:10px;
+    color: white;
+    font-weight:700;
+    opacity:.3;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .top_button:hover {
+    opacity: initial;
+  }
